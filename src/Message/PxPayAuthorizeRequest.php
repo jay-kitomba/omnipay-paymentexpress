@@ -217,6 +217,7 @@ class PxPayAuthorizeRequest extends AbstractRequest
         $data->AmountInput = $this->getAmount();
         $data->CurrencyInput = $this->getCurrency();
         $data->UrlSuccess = $this->getReturnUrl();
+        $data->UrlCallback = $this->getCallbackUrl();
         $data->UrlFail = $this->getCancelUrl() ?: $this->getReturnUrl();
 
         if ($this->getDescription()) {
@@ -282,5 +283,15 @@ class PxPayAuthorizeRequest extends AbstractRequest
     public function getReturnUrl()
     {
         return htmlentities($this->getParameter('returnUrl'));
+    }
+
+    /**
+     * Get the FPRN callback URL.
+     *
+     * @return string
+     */
+    public function getCallbackUrl()
+    {
+        return htmlentities($this->getParameter('callbackUrl'));
     }
 }
