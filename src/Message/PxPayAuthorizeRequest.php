@@ -77,6 +77,17 @@ class PxPayAuthorizeRequest extends AbstractRequest
         return $this->setParameter('password', $value);
     }
 
+    /**
+     * Set the FPRN callback field on the request
+     *
+     * @param string $value URL
+     * @return $this
+     */
+    public function setCallbackUrl($value)
+    {
+        return $this->setParameter('callbackUrl', $value);
+    }
+
     public function getPxPostUsername()
     {
         return $this->getParameter('pxPostUsername');
