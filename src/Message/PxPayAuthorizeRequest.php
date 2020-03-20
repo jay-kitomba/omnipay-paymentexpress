@@ -303,6 +303,6 @@ class PxPayAuthorizeRequest extends AbstractRequest
      */
     public function getCallbackUrl()
     {
-        return htmlentities($this->getParameter('callbackUrl'));
+        return $this->getParameter('callbackUrl');
     }
 }
